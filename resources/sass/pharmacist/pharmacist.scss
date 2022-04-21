@@ -1,0 +1,236 @@
+.section-dashboard {
+    .row-statistic {
+        margin-top: 30px;
+        margin-bottom: 50px;
+        .insight {
+            border-radius: 7px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            min-height: 90px;
+            background: white;
+            box-shadow: 0px 1px 4px rgba(0,0,0,.08);
+            .icon {
+                color: white;
+                display: grid;
+                place-content: center;
+                font-size: 40px;
+                border-radius: 7px;
+                height: 100%;
+                min-width: 60px;
+                background: #2F80ED;
+            }
+            .wrapper-desc-insight {
+                h3 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .row-information {
+        .wrapper-data-expired, .wrapper-data-stock-less {
+            padding: 20px;
+            border-radius: 7px;
+            background: white;
+            box-shadow: 0px 1px 4px rgba(0,0,0, .08);
+        }
+        .wrapper-data-stock-less {
+            margin-top: 20px;
+        }
+    }
+}
+
+.section-data-medicine {
+    .row-wrapper-content {
+        .row-medicine {
+            .col-search {
+                display: flex;
+                margin-bottom: 30px;
+                input {
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                }
+                button {
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                }
+            }
+            table {
+                thead tr th {
+                    padding-bottom: 20px;
+                }
+                tbody tr td {
+                    padding: 15px 0px;
+                }
+            }
+        }
+    }
+}
+
+.section-report {
+    .row-action {
+        border-radius: 0 7px 7px;
+        padding: 20px;
+        box-shadow: 0px 1px 5px rgba(0,0,0, .12);
+        background: white;
+    }
+    .row-data-list {
+        padding: 20px;
+        margin-top: 20px;
+        background: white;
+    }
+}
+
+.section-add-stock {
+    .col-form-add {
+        padding: 20px;
+        border-radius: 7px;
+        background: white;
+        box-shadow: 0px 1px 4px rgba(0,0,0, .08);
+    }
+}
+
+.section-add-medicine {
+    .wrapper-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 7px;
+        box-shadow: 0px 1px 4px rgba(0,0,0, .08);
+        padding: 20px;
+        background: white;
+    }
+    .row-list-drugs {
+        margin-top: 50px;
+        .table-responsive {
+            border-radius: 7px;
+            box-shadow: 0px 1px 4px rgba(0,0,0, .08);
+            padding: 20px;
+            background: white;
+            .row-search {
+                form {
+                    display: flex;
+                    flex-direction: row;
+                }
+                input {
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+                }
+                button {
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                }
+            }
+        }
+    }
+}
+
+.section-file-report {
+    .row-headline-form {
+        top: -100px;
+        position: relative;
+        padding: 40px 70px;
+        min-height: 230px;
+        background: #f5f5f5;
+        line-height: 0;
+        .wrapper-headline {
+            min-height: 170px;
+            .col-img {
+                float: left;
+                margin-right: 20px;
+            }
+            .heading {
+                margin-top: 30px;
+                line-height: 0;
+                text-align: right;
+                h2 {
+                    color: #8e8e8e;
+                    font-size: 15px;
+                }
+                h5 {
+                    font-weight: 400;
+                    font-size: 13px;
+                    color: #bfbfbf;
+                }
+            }
+        }
+        .wrapper-heading {
+            p {
+                font-size: 13px;
+                color: #8e8e8e;
+                margin-top: 30px;
+            }
+        }
+    }
+    .row-wrapper-table {
+        position: relative;
+        top: -30px;
+        margin: 0px 70px 20px 70px;
+        .wrapper-headline {
+            margin-bottom: 40px;
+            h5 {
+                margin-bottom: 0;
+            }
+        }
+        table {
+            width: 100%;
+            font-size: 15px;
+            border-spacing: 0;
+            thead tr {
+                th {
+                    color: #8e8e8e;
+                    padding: 1px 3px 20px 3px;
+                }
+                th:nth-child(1) {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    
+                }
+                th:nth-child(2) {
+                    text-align: left;
+                }
+                th:nth-child(3) {
+                    text-align: left;
+                }
+                th:nth-child(5), th:nth-child(6), th:nth-child(7) {
+                    text-align: right;
+                }
+            }
+            tbody {
+                tr {
+                    text-align: center;
+                    td {
+                        padding: 8px 2px;
+                        border-bottom: 1px solid rgba(0,0,0,.06);
+                    }
+                    td:nth-child(1) {
+                        padding: 5px;
+                    }
+                    td:nth-child(2) {
+                        text-align: left;
+                    }
+                    td:nth-child(3) {
+                        text-align: left;
+                    }
+                    td:nth-child(5), td:nth-child(6), td:nth-child(7) {
+                        text-align: right;
+                    }
+                }
+                tr.total_qty {
+                    td:nth-child(1) {
+                        border-bottom: none;
+                    }
+                    th {
+                        padding-top: 20px;
+                        font-size: 16px;
+                        text-align: right;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

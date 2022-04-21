@@ -1,0 +1,87 @@
+.row-schedule-doctor {
+  padding: 20px;
+  border-radius: 7px;
+  background: white;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.row-schedule-doctor .row-search {
+  margin-bottom: 20px;
+}
+.row-schedule-doctor .row-search .wrapper-search {
+  display: flex;
+  flex-direction: row;
+}
+.row-schedule-doctor .row-search .wrapper-search input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.row-schedule-doctor .row-search .wrapper-search button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.section-dashboard-patient .row-information-patient {
+  margin-top: 60px;
+}
+.section-dashboard-patient .row-information-patient .wrapper-no-order {
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.18);
+  min-height: 120px;
+  background: white;
+}
+.section-dashboard-patient .row-information-patient .wrapper-no-order p {
+  font-size: 12px;
+  color: grey;
+  margin: 0;
+}
+.section-dashboard-patient .row-information-patient .wrapper-no-order p.date_book {
+  font-size: 12px;
+  color: black;
+  margin: 7px 0 0 0;
+}
+.section-dashboard-patient .row-information-patient .wrapper-no-order h4 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.section-print-no-order {
+  margin: 0;
+}
+.section-print-no-order .container {
+  padding: 10px 30px;
+}
+.section-print-no-order .container .head {
+  float: left;
+  width: 50%;
+  margin-top: 20px;
+}
+.section-print-no-order .container .head p.small-title {
+  font-size: 10px;
+  color: grey;
+  margin: 0 0 5px 0;
+}
+.section-print-no-order .container .head h4 {
+  font-size: 27px;
+  margin: 0;
+}
+.section-print-no-order .container .content {
+  margin-top: 24px;
+  float: right;
+  width: 50%;
+  font-size: 9px;
+}
+.section-print-no-order .container .content table {
+  width: 100%;
+}
+.section-print-no-order .container .content table tr th:nth-child(1) {
+  color: rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.section-history-prescription .wrapper-of-container {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.18);
+  border-radius: 7px;
+  background-color: white;
+}

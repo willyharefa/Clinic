@@ -1,0 +1,28 @@
+.row-payment-list {
+    margin-top: 30px;
+    .headline-row {
+        margin-bottom: 10px;
+    }
+    .table-responsive {
+        padding: 20px;
+        border-radius: 7px;
+        box-shadow: 0px 1px 4px rgba(0,0,0, .08);
+    }
+}
+
+.section-payment {
+    .wrapper-info-payment {
+        .content-payment-list {
+            background: white;
+            padding: 20px;
+            border-radius: 7px;
+            box-shadow: 0px 1px 4px rgba(0,0,0,.08);
+        }
+    }
+}
+
+.section-data-payment {
+    .row-headline-filter {
+        margin-bottom: 20px;
+    }
+}

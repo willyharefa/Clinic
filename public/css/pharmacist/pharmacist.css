@@ -1,0 +1,202 @@
+.section-dashboard .row-statistic {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+.section-dashboard .row-statistic .insight {
+  border-radius: 7px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  min-height: 90px;
+  background: white;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+}
+.section-dashboard .row-statistic .insight .icon {
+  color: white;
+  display: grid;
+  place-content: center;
+  font-size: 40px;
+  border-radius: 7px;
+  height: 100%;
+  min-width: 60px;
+  background: #2F80ED;
+}
+.section-dashboard .row-statistic .insight .wrapper-desc-insight h3 {
+  font-size: 20px;
+}
+.section-dashboard .row-statistic .insight .wrapper-desc-insight p {
+  font-size: 12px;
+}
+.section-dashboard .row-information .wrapper-data-expired, .section-dashboard .row-information .wrapper-data-stock-less {
+  padding: 20px;
+  border-radius: 7px;
+  background: white;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+}
+.section-dashboard .row-information .wrapper-data-stock-less {
+  margin-top: 20px;
+}
+
+.section-data-medicine .row-wrapper-content .row-medicine .col-search {
+  display: flex;
+  margin-bottom: 30px;
+}
+.section-data-medicine .row-wrapper-content .row-medicine .col-search input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.section-data-medicine .row-wrapper-content .row-medicine .col-search button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.section-data-medicine .row-wrapper-content .row-medicine table thead tr th {
+  padding-bottom: 20px;
+}
+.section-data-medicine .row-wrapper-content .row-medicine table tbody tr td {
+  padding: 15px 0px;
+}
+
+.section-report .row-action {
+  border-radius: 0 7px 7px;
+  padding: 20px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  background: white;
+}
+.section-report .row-data-list {
+  padding: 20px;
+  margin-top: 20px;
+  background: white;
+}
+
+.section-add-stock .col-form-add {
+  padding: 20px;
+  border-radius: 7px;
+  background: white;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.section-add-medicine .wrapper-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 7px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  background: white;
+}
+.section-add-medicine .row-list-drugs {
+  margin-top: 50px;
+}
+.section-add-medicine .row-list-drugs .table-responsive {
+  border-radius: 7px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  background: white;
+}
+.section-add-medicine .row-list-drugs .table-responsive .row-search form {
+  display: flex;
+  flex-direction: row;
+}
+.section-add-medicine .row-list-drugs .table-responsive .row-search input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.section-add-medicine .row-list-drugs .table-responsive .row-search button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.section-file-report .row-headline-form {
+  top: -100px;
+  position: relative;
+  padding: 40px 70px;
+  min-height: 230px;
+  background: #f5f5f5;
+  line-height: 0;
+}
+.section-file-report .row-headline-form .wrapper-headline {
+  min-height: 170px;
+}
+.section-file-report .row-headline-form .wrapper-headline .col-img {
+  float: left;
+  margin-right: 20px;
+}
+.section-file-report .row-headline-form .wrapper-headline .heading {
+  margin-top: 30px;
+  line-height: 0;
+  text-align: right;
+}
+.section-file-report .row-headline-form .wrapper-headline .heading h2 {
+  color: #8e8e8e;
+  font-size: 15px;
+}
+.section-file-report .row-headline-form .wrapper-headline .heading h5 {
+  font-weight: 400;
+  font-size: 13px;
+  color: #bfbfbf;
+}
+.section-file-report .row-headline-form .wrapper-heading p {
+  font-size: 13px;
+  color: #8e8e8e;
+  margin-top: 30px;
+}
+.section-file-report .row-wrapper-table {
+  position: relative;
+  top: -30px;
+  margin: 0px 70px 20px 70px;
+}
+.section-file-report .row-wrapper-table .wrapper-headline {
+  margin-bottom: 40px;
+}
+.section-file-report .row-wrapper-table .wrapper-headline h5 {
+  margin-bottom: 0;
+}
+.section-file-report .row-wrapper-table table {
+  width: 100%;
+  font-size: 15px;
+  border-spacing: 0;
+}
+.section-file-report .row-wrapper-table table thead tr th {
+  color: #8e8e8e;
+  padding: 1px 3px 20px 3px;
+}
+.section-file-report .row-wrapper-table table thead tr th:nth-child(1) {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.section-file-report .row-wrapper-table table thead tr th:nth-child(2) {
+  text-align: left;
+}
+.section-file-report .row-wrapper-table table thead tr th:nth-child(3) {
+  text-align: left;
+}
+.section-file-report .row-wrapper-table table thead tr th:nth-child(5), .section-file-report .row-wrapper-table table thead tr th:nth-child(6), .section-file-report .row-wrapper-table table thead tr th:nth-child(7) {
+  text-align: right;
+}
+.section-file-report .row-wrapper-table table tbody tr {
+  text-align: center;
+}
+.section-file-report .row-wrapper-table table tbody tr td {
+  padding: 8px 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.section-file-report .row-wrapper-table table tbody tr td:nth-child(1) {
+  padding: 5px;
+}
+.section-file-report .row-wrapper-table table tbody tr td:nth-child(2) {
+  text-align: left;
+}
+.section-file-report .row-wrapper-table table tbody tr td:nth-child(3) {
+  text-align: left;
+}
+.section-file-report .row-wrapper-table table tbody tr td:nth-child(5), .section-file-report .row-wrapper-table table tbody tr td:nth-child(6), .section-file-report .row-wrapper-table table tbody tr td:nth-child(7) {
+  text-align: right;
+}
+.section-file-report .row-wrapper-table table tbody tr.total_qty td:nth-child(1) {
+  border-bottom: none;
+}
+.section-file-report .row-wrapper-table table tbody tr.total_qty th {
+  padding-top: 20px;
+  font-size: 16px;
+  text-align: right;
+}
