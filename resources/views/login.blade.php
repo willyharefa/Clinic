@@ -3,7 +3,7 @@
 @section('container')
     <section class="section-login">
         <div class="container container-login">
-            <form class="row g-0 justify-content-center needs-validation" novalidate action="{{ route('authenticate') }}" method="POST">
+            <form class="row g-0 justify-content-center needs-validation" novalidate action="https:/{{ route('authenticate') }}" method="POST">
                 @csrf
                 <div class="col-8 px-0">
                     @if($message = Session::get('success'))
