@@ -1,9 +1,4 @@
-@extends('layouts.patient_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/patient/schedule_doctor.css') }}">
-@endpush
-
+@extends('layouts.dashboard_patient')
 @section('content')
     <section class="section-history-medical">
         <div class="row gx-0 row-wrapper-headline">
@@ -11,8 +6,8 @@
             <p class="form-text text-muted mb-0">Dibawah ini merupakan riwayat berobat anda</p>
         </div>
         <div class="row gx-0 row-wrapper-table">
-            <div class="table-responsive p-3">
-                <table class="table align-middle table-borderless">
+            <div class="table-responsive">
+                <table class="table align-middle table-borderless text-nowrap">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -32,7 +27,7 @@
                             <td>{{ $item->date_checkup->format('d F Y') }}</td>
                             <td>{{ $item->doctor->name }}</td>
                             <td>
-                                <a href="{{ route('history_prescription', $item->id) }}" class="btn btn-success">Cek</a>
+                                <a href="{{ route('history_prescription', $item->id) }}" class="btn btn-success">Lihat Resep</a>
                             </td>
                         </tr>
                         @empty

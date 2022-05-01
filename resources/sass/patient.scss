@@ -1,0 +1,158 @@
+@import 'presets.scss';
+
+.section-dashboard-patient {
+    h4 {
+        margin-bottom: 20px;
+        font-weight: 300;
+        color: rgba($dark-4, $alpha: .75);
+    }
+    .greetings {
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 70px;
+        .name-user {
+            font-weight: 500;
+        }
+    }
+    .row-information-patient {
+        .wrapper-card {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            height: 240px;
+            overflow-y: scroll;
+            grid-template-rows: auto;
+            .wrapper-no-order {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 240px;
+                border-radius: 12px;
+                box-shadow: 0px 0px 5px rgba($dark-4, .09);
+                padding: 20px 30px;
+                background: $white-1;
+                h3 {
+                    font-size: 50px;
+                    font-weight: bold;
+                    line-height: normal;
+                }
+                p {
+                    color: rgba($dark-4, .7);
+                    font-size: 12px;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+                h6 {
+                    font-size: 18px;
+                }
+                .btn-print {
+                    display: flex;
+                    padding: 14px 25px;
+                }
+            }
+            .alert-activity {
+                background: rgba($blue-4, .55);
+            }
+        }
+    }
+    .row-information-checkup {
+        .alert-news {
+            background: rgba($green-1, .35);
+        }
+    }
+}
+.section-appointment-schedule {
+    .row-schedule-doctor {
+        border-radius: 7px;
+        padding: 20px;
+        background: $white-1;
+        .row-search {
+            margin-bottom: 20px;
+            .wrapper-search {
+                display: flex;
+                input {
+                    min-width: 220px;
+                }
+            }
+        }
+    }
+}
+.section-history-medical {
+    .row-wrapper-table {
+        box-shadow: 0px 0px 4px rgba($dark-4, $alpha: .12);
+        border-radius: 7px;
+        margin-top: 30px;
+        padding: 20px;
+        background: $white-1;
+    }
+}
+.section-history-prescription {
+    .card {
+        max-width: 580px;
+    }
+}
+
+// Dark Mode
+.darkmode {
+    .section-dashboard-patient {
+        .row-information-patient {
+            .wrapper-card {
+                .wrapper-no-order {
+                    background: $dark-3;
+                    h6 {
+                        color: $white-4;
+                    }
+                }
+            }
+        }
+    }
+    .section-appointment-schedule {
+        .row-schedule-doctor {
+            background: $dark-3;
+            .table-responsive {
+                thead {
+                    color: $white-3;
+                }
+                tbody {
+                    color: $white-4;
+                }
+            }
+        }
+    }
+    .section-history-medical {
+        .row-wrapper-table {
+            background: $dark-3;
+            thead {
+                color: $white-3;
+            }
+            tbody {
+                color: $white-4;
+            }
+        }
+    }
+    .section-history-prescription {
+        .card {
+            border: none;
+            overflow: hidden;
+            .card-header {
+                background: $dark-3;
+            }
+            .card-body {
+                background: $dark-3;
+                table {
+                    thead {
+                        color: $white-3;
+                    }
+                    tbody {
+                        color: $white-4;
+                    }
+                }
+            }
+        }
+        a {
+            color: rgba($blue-1, .80);
+        }
+    }
+}
+
+// Responsive Content

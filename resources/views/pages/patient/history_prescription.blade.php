@@ -1,12 +1,7 @@
-@extends('layouts.patient_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/patient/schedule_doctor.css') }}">
-@endpush
-
+@extends('layouts.dashboard_patient')
 @section('content')
     <section class="section-history-prescription">
-        <div class="col-md-6 col-sm-12 wrapper-of-container">
+        <div class="wrapper-of-container mb-2">
             <div class="card">
                 <div class="card-header">
                     Data resep obat anda
@@ -35,42 +30,8 @@
                         </table>
                     </div>
                 </div>
-              </div>
+            </div>
         </div>
+        <a href="{{ route('history_medical') }}"><strong>Ke halaman sebelumnya</strong></a>
     </section>
 @endsection
-
-{{-- @push('script')
-    <script>
-        const btnPrint = document.querySelectorAll(".btn-print");
-        btnPrint.forEach(btnPrint => {
-            btnPrint.addEventListener("click", () => {
-                const attId = btnPrint.getAttribute("data-id"); 
-                swal({
-                    title: "Ingin mencetak ?",
-                    text: "No antrian anda akan cetak sendiri",
-                    icon: "info",
-                    html: true,
-                    buttons: true,
-                    dangerMode: true,
-                })
-                .then((willPrint) => {
-                    if (willPrint) {
-                        swal("Oke, silahkan unduh no antrian anda", {
-                            icon: "success",
-                        });
-                        setTimeout(()=> {
-                            location.href = "/dashbaord/patient/print/no/order/"+attId+"";
-                        },1200);
-
-                    } else {
-                        swal("No antrian batal anda cetak", {
-                            icon: "info",
-                        });
-
-                    }
-                });
-            })
-        })
-    </script>
-@endpush   --}}

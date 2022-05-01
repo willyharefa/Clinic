@@ -16,6 +16,7 @@ use App\Http\Controllers\PharmacistController;
 use App\Http\Controllers\ScheduleController;
 
 Route::get('/', [HomepageController::class, 'index']); //Halaman Depan Website
+// Route::view('/dashboard/testing', 'layouts.dashboard_patient');
 
 Route::middleware('guest:patient,web,doctor,pharmacist')->group(function () {
     Route::get('/login', [HomepageController::class, 'login'])->name('login');

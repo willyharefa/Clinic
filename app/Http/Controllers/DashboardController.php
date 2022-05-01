@@ -52,12 +52,12 @@ class DashboardController extends Controller
 
     public function dashboardPatient()
     {
-        $title = "Dashboard Pasien";
+        $title = "Dashboard Saya";
         $data = Patient::find(Auth::guard('patient')->user()->id);
         $requestAppointment = Appointmen::where('patient_id', $data->id)
                                 ->where('status', 'Antrian')
                                 ->get();
-        // dd($requestAppointment);
+        // dd($requestAppointment->isEmpty() ? "yes" : "no");
         return view('pages.patient.dashboard', compact('title', 'data', 'requestAppointment'));
     }
 

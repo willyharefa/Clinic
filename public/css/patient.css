@@ -1,0 +1,190 @@
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideNav {
+  from {
+    left: 0;
+  }
+  to {
+    left: -260px;
+  }
+}
+@keyframes hideNav {
+  from {
+    left: 0;
+  }
+  to {
+    left: -260px;
+  }
+}
+@-webkit-keyframes showNav {
+  from {
+    left: -260px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes showNav {
+  from {
+    left: -260px;
+  }
+  to {
+    left: 0;
+  }
+}
+.section-dashboard-patient h4 {
+  margin-bottom: 20px;
+  font-weight: 300;
+  color: rgba(106, 106, 106, 0.75);
+}
+.section-dashboard-patient .greetings {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 70px;
+}
+.section-dashboard-patient .greetings .name-user {
+  font-weight: 500;
+}
+.section-dashboard-patient .row-information-patient .wrapper-card {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  height: 240px;
+  overflow-y: scroll;
+  grid-template-rows: auto;
+}
+.section-dashboard-patient .row-information-patient .wrapper-card .wrapper-no-order {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 240px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px rgba(106, 106, 106, 0.09);
+  padding: 20px 30px;
+  background: #ffffff;
+}
+.section-dashboard-patient .row-information-patient .wrapper-card .wrapper-no-order h3 {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: normal;
+}
+.section-dashboard-patient .row-information-patient .wrapper-card .wrapper-no-order p {
+  color: rgba(106, 106, 106, 0.7);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.section-dashboard-patient .row-information-patient .wrapper-card .wrapper-no-order h6 {
+  font-size: 18px;
+}
+.section-dashboard-patient .row-information-patient .wrapper-card .wrapper-no-order .btn-print {
+  display: flex;
+  padding: 14px 25px;
+}
+.section-dashboard-patient .row-information-patient .wrapper-card .alert-activity {
+  background: rgba(129, 212, 250, 0.55);
+}
+.section-dashboard-patient .row-information-checkup .alert-news {
+  background: rgba(46, 204, 113, 0.35);
+}
+
+.section-appointment-schedule .row-schedule-doctor {
+  border-radius: 7px;
+  padding: 20px;
+  background: #ffffff;
+}
+.section-appointment-schedule .row-schedule-doctor .row-search {
+  margin-bottom: 20px;
+}
+.section-appointment-schedule .row-schedule-doctor .row-search .wrapper-search {
+  display: flex;
+}
+.section-appointment-schedule .row-schedule-doctor .row-search .wrapper-search input {
+  min-width: 220px;
+}
+
+.section-history-medical .row-wrapper-table {
+  box-shadow: 0px 0px 4px rgba(106, 106, 106, 0.12);
+  border-radius: 7px;
+  margin-top: 30px;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.section-history-prescription .card {
+  max-width: 580px;
+}
+
+.darkmode .section-dashboard-patient .row-information-patient .wrapper-card .wrapper-no-order {
+  background: #3e3e3e;
+}
+.darkmode .section-dashboard-patient .row-information-patient .wrapper-card .wrapper-no-order h6 {
+  color: #a5a5a5;
+}
+.darkmode .section-appointment-schedule .row-schedule-doctor {
+  background: #3e3e3e;
+}
+.darkmode .section-appointment-schedule .row-schedule-doctor .table-responsive thead {
+  color: #f0f0f0;
+}
+.darkmode .section-appointment-schedule .row-schedule-doctor .table-responsive tbody {
+  color: #a5a5a5;
+}
+.darkmode .section-history-medical .row-wrapper-table {
+  background: #3e3e3e;
+}
+.darkmode .section-history-medical .row-wrapper-table thead {
+  color: #f0f0f0;
+}
+.darkmode .section-history-medical .row-wrapper-table tbody {
+  color: #a5a5a5;
+}
+.darkmode .section-history-prescription .card {
+  border: none;
+  overflow: hidden;
+}
+.darkmode .section-history-prescription .card .card-header {
+  background: #3e3e3e;
+}
+.darkmode .section-history-prescription .card .card-body {
+  background: #3e3e3e;
+}
+.darkmode .section-history-prescription .card .card-body table thead {
+  color: #f0f0f0;
+}
+.darkmode .section-history-prescription .card .card-body table tbody {
+  color: #a5a5a5;
+}
+.darkmode .section-history-prescription a {
+  color: rgba(0, 153, 255, 0.8);
+}

@@ -19409,10 +19409,36 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/sass/patient/schedule_doctor.scss":
-/*!*****************************************************!*\
-  !*** ./resources/sass/patient/schedule_doctor.scss ***!
-  \*****************************************************/
+/***/ "./resources/sass/payment.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/payment.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/doctor/doctor.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/doctor/doctor.scss ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/pharmacist/pharmacist.scss":
+/*!***************************************************!*\
+  !*** ./resources/sass/pharmacist/pharmacist.scss ***!
+  \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19448,9 +19474,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/payment.scss":
+/***/ "./resources/sass/patient.scss":
 /*!*************************************!*\
-  !*** ./resources/sass/payment.scss ***!
+  !*** ./resources/sass/patient.scss ***!
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -19461,10 +19487,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/doctor/doctor.scss":
-/*!*******************************************!*\
-  !*** ./resources/sass/doctor/doctor.scss ***!
-  \*******************************************/
+/***/ "./resources/sass/presets.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/presets.scss ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19474,10 +19500,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/pharmacist/pharmacist.scss":
-/*!***************************************************!*\
-  !*** ./resources/sass/pharmacist/pharmacist.scss ***!
-  \***************************************************/
+/***/ "./resources/sass/dashboard.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/dashboard.scss ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19792,12 +19818,14 @@ process.umask = function() { return 0; };
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/pharmacist/pharmacist": 0,
-/******/ 			"css/doctor/doctor": 0,
-/******/ 			"css/payment": 0,
+/******/ 			"css/dashboard": 0,
+/******/ 			"css/presets": 0,
+/******/ 			"css/patient": 0,
 /******/ 			"css/admin": 0,
 /******/ 			"css/index": 0,
-/******/ 			"css/patient/schedule_doctor": 0
+/******/ 			"css/pharmacist/pharmacist": 0,
+/******/ 			"css/doctor/doctor": 0,
+/******/ 			"css/payment": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -19847,13 +19875,15 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/pharmacist/pharmacist","css/doctor/doctor","css/payment","css/admin","css/index","css/patient/schedule_doctor"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/pharmacist/pharmacist","css/doctor/doctor","css/payment","css/admin","css/index","css/patient/schedule_doctor"], () => (__webpack_require__("./resources/sass/index.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pharmacist/pharmacist","css/doctor/doctor","css/payment","css/admin","css/index","css/patient/schedule_doctor"], () => (__webpack_require__("./resources/sass/admin.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pharmacist/pharmacist","css/doctor/doctor","css/payment","css/admin","css/index","css/patient/schedule_doctor"], () => (__webpack_require__("./resources/sass/payment.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pharmacist/pharmacist","css/doctor/doctor","css/payment","css/admin","css/index","css/patient/schedule_doctor"], () => (__webpack_require__("./resources/sass/doctor/doctor.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/pharmacist/pharmacist","css/doctor/doctor","css/payment","css/admin","css/index","css/patient/schedule_doctor"], () => (__webpack_require__("./resources/sass/pharmacist/pharmacist.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/pharmacist/pharmacist","css/doctor/doctor","css/payment","css/admin","css/index","css/patient/schedule_doctor"], () => (__webpack_require__("./resources/sass/patient/schedule_doctor.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/sass/index.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/sass/admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/sass/patient.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/sass/presets.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/sass/dashboard.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/sass/payment.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/sass/doctor/doctor.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/dashboard","css/presets","css/patient","css/admin","css/index","css/pharmacist/pharmacist","css/doctor/doctor","css/payment"], () => (__webpack_require__("./resources/sass/pharmacist/pharmacist.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

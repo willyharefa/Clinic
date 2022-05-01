@@ -1,0 +1,39 @@
+// Animation
+@keyframes fadeIn {
+    from  { opacity: 0; }
+    to    { opacity: 1; }
+}
+@keyframes fadeOut {
+    from  { opacity: 1; }
+    to    { opacity: 0; }
+}
+@keyframes hideNav {
+    from  { left: 0; }
+    to    { left: -260px; }
+}
+@keyframes showNav {
+    from  { left: -260px; }
+    to    { left: 0; }
+}
+// Light Mode
+$white-1 : #ffffff;
+$white-2 : #f8f8f8;
+$white-3 : #f0f0f0;
+$white-4 : #a5a5a5;
+
+// Dark Mode
+$dark-1 : #212121;
+$dark-2 : #262626;
+$dark-3 : #3e3e3e;
+$dark-4 : #6a6a6a;
+
+// Another Color
+$blue-1 : #0099ff;
+$blue-4 : #81D4FA;
+$green-1 : #2ECC71;
+$green-2 : #82E0AA;
+
+$trans-3 : all .3s ease;
+$trans-4 : all .4s ease;
+$trans-5 : all .5s ease;
+$trans-6 : all .6s ease;
