@@ -61,9 +61,9 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end wrapper-dropdown">
                         <li>
-                            <button class="dropdown-item" type="button">
+                            <a class="dropdown-item" type="button" href="{{ route('profile_patient') }}">
                                 <i class='bx bx-street-view bx-sm me-2'></i> My Profile
-                            </button>
+                            </a>
                         </li>
                         <li>
                             <form action="{{ route('logout') }}" method="POST" id="form-logout">

@@ -1,50 +1,64 @@
-@extends('layouts.patient_dashboard')
-
+@extends('layouts.dashboard_patient')
 @section('content')
-    <form action="{{ route('update_profile_patient', $data->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="row px-0">
-            <div class="col-md-4 col-sm-12">
-                <div class="mb-3">
-                    <label class="form-label">Nama lengkap</label>
-                    <input type="text" class="form-control" name="name" value="{{ $data->name }}">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Jenis Kelamin</label>
-                    <select class="form-select" name="gender" required>
-                        <option selected value="{{ $data->gender }}">{{ $data->gender }}</option>
-                        <option value="Pria">Pria</option>
-                        <option value="Perempuan">Perempuan</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Tanggal Lahir</label>
-                    <input type="date" class="form-control" name="birthday" value="{{ $data->birthday }}">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Alamat</label>
-                    <input type="text" class="form-control" name="address" value="{{ $data->address }}">
+    <section class="section-detail-patient">
+        <div class="container-detail">
+            <div class="head-detail">
+                <img class="image-profile" src="{{ asset('img/user.png') }}" alt="">
+                <div class="wrapper-name">
+                    <p class="m-0 p-0 text-muted">Nama Lengkap</p>
+                    <h4 class="m-0 p-0">{{ $data->name }}</h4>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="mb-3">
-                    <label class="form-label">Foto Profile</label>
-                    <input type="file" class="form-control" name="image" value="{{ $data->picture }}">
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Nama</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled value="{{ $data->name }}">
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username" value="{{ $data->username }}">
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Jenis kelamin</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled value="{{ $data->gender }}">
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" value="{{ $data->email }}">
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Tanggal Lahir</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" disabled value="{{ $data->birthday->format('Y-m-d') }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Alamat</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled value="{{ $data->address }}">
+                </div>
+            </div>
+            <div class="row mb-5">
+                <label class="col-sm-2 col-form-label">No Telepon</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled value="{{ $data->phone }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label fw-bold">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled value="{{ $data->username }}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-2 col-form-label fw-bold">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" disabled value="{{ $data->email }}">
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Perhatian!</h4>
+                    <p>Untuk saat ini anda tidak dapat mengungah foto. Password anda selalu ingat, karna anda tidak dapat memperbaharuinya kembali.</p>
+                    <hr>
+                    <p class="mb-0">Jika anda ingin memperbaharui password, silahkan hubungi <strong>admin</strong> kami.</p>
                 </div>
             </div>
         </div>
-
-        <div class="col-5">
-            <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('dashboard_patient') }}" class="btn">Kembali</a>
-        </div>
-    </form>
+    </section>
 @endsection

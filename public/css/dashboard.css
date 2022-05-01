@@ -254,13 +254,14 @@
 #main-content .section-top-navbar .wrapper-settings .wrapper-dropdown {
   padding: 0;
 }
-#main-content .section-top-navbar .wrapper-settings .wrapper-dropdown button {
+#main-content .section-top-navbar .wrapper-settings .wrapper-dropdown a, #main-content .section-top-navbar .wrapper-settings .wrapper-dropdown button {
+  padding: 0px 16px;
   display: flex;
   align-items: center;
   height: 47px;
   transition: all 0.4s ease;
 }
-#main-content .section-top-navbar .wrapper-settings .wrapper-dropdown button:hover {
+#main-content .section-top-navbar .wrapper-settings .wrapper-dropdown a:hover, #main-content .section-top-navbar .wrapper-settings .wrapper-dropdown button:hover {
   background: #0099ff;
   color: #ffffff;
   transition: all 0.4s ease;
