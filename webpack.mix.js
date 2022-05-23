@@ -21,3 +21,7 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/doctor.scss', 'public/css/doctor.css')
     .sass('resources/sass/pharmacist.scss', 'public/css/pharmacist.css')
     .version();
+
+if (mix.inProduction()) {
+    mix.version();
+}

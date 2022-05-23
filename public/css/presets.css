@@ -1,1 +1,64 @@
-@-webkit-keyframes fadeIn{0%{opacity:0}to{opacity:1}}@keyframes fadeIn{0%{opacity:0}to{opacity:1}}@-webkit-keyframes fadeOut{0%{opacity:1}to{opacity:0}}@keyframes fadeOut{0%{opacity:1}to{opacity:0}}@-webkit-keyframes hideNav{0%{left:0}to{left:-260px}}@keyframes hideNav{0%{left:0}to{left:-260px}}@-webkit-keyframes showNav{0%{left:-260px}to{left:0}}@keyframes showNav{0%{left:-260px}to{left:0}}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideNav {
+  from {
+    left: 0;
+  }
+  to {
+    left: -260px;
+  }
+}
+@keyframes hideNav {
+  from {
+    left: 0;
+  }
+  to {
+    left: -260px;
+  }
+}
+@-webkit-keyframes showNav {
+  from {
+    left: -260px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes showNav {
+  from {
+    left: -260px;
+  }
+  to {
+    left: 0;
+  }
+}

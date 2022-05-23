@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('/css/dashboard.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/admin.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ mix('/css/admin.css') }}">
     <title>{{ $title }}</title>
 </head>
 <body>
