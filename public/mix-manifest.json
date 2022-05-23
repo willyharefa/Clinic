@@ -1,11 +1,11 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/dashboard.css": "/css/dashboard.css",
-    "/css/presets.css": "/css/presets.css",
-    "/css/patient.css": "/css/patient.css",
-    "/css/admin.css": "/css/admin.css",
-    "/css/index.css": "/css/index.css",
-    "/css/pharmacist.css": "/css/pharmacist.css",
-    "/css/doctor.css": "/css/doctor.css",
-    "/css/payment.css": "/css/payment.css"
+    "/js/app.js": "/js/app.js?id=9eab7890a7ea9f27cc891d1b2af48c20",
+    "/css/dashboard.css": "/css/dashboard.css?id=edb202b196764faf76487cb12e37e306",
+    "/css/presets.css": "/css/presets.css?id=80260b8ce98c1c24059ad06d60c50722",
+    "/css/patient.css": "/css/patient.css?id=77bfdf41a9285dd737a47c93ec13056c",
+    "/css/admin.css": "/css/admin.css?id=2afe4dfc6287fa7636053dd9caa1f52e",
+    "/css/index.css": "/css/index.css?id=f8a68a99d4af0f1397e93449d6b4dfc7",
+    "/css/pharmacist.css": "/css/pharmacist.css?id=179938b367daea48ccdff8c91dcbac48",
+    "/css/doctor.css": "/css/doctor.css?id=ad24b0646e913d049914318982085416",
+    "/css/payment.css": "/css/payment.css?id=19eb9b326747113dc6cf86bfbf0557ab"
 }
