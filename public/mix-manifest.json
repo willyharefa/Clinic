@@ -5,7 +5,7 @@
     "/css/patient.css": "/css/patient.css",
     "/css/admin.css": "/css/admin.css",
     "/css/index.css": "/css/index.css",
-    "/css/pharmacist/pharmacist.css": "/css/pharmacist/pharmacist.css",
-    "/css/doctor/doctor.css": "/css/doctor/doctor.css",
+    "/css/pharmacist.css": "/css/pharmacist.css",
+    "/css/doctor.css": "/css/doctor.css",
     "/css/payment.css": "/css/payment.css"
 }

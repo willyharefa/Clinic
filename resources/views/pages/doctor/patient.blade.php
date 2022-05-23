@@ -1,11 +1,5 @@
-@extends('layouts.doctor_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/doctor/doctor.css') }}">
-@endpush
-
+@extends('layouts.dashboard_doctor')
 @section('content')
-
     <section class="section-patient-in">
         <div class="row row-headline-patient-in">
             <legend>Daftar Pasien</legend>

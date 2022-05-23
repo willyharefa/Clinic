@@ -1,11 +1,6 @@
-@extends('layouts.doctor_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/doctor/doctor.css') }}">
-@endpush
-
+@extends('layouts.dashboard_doctor')
 @section('content')
-    <section>
+    <section class="section-schedule">
         <div class="row gx-0 mx-0 mb-2">
             @if($message = Session::get('success'))
                 <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
@@ -14,16 +9,14 @@
                 </div>
             @endif
         </div>
-
         <div class="row gx-0 row-schedule">
             <div class="col btn-create-schedule">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#schedule">Buat Jadwal</button>
+                <button type="button" class="btn btn-primary btn-input" data-bs-toggle="modal" data-bs-target="#schedule">Buat Jadwal</button>
                 <div class="modal fade" id="schedule" tabindex="-1" aria-labelledby="schedule" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="schedule">Jadwal Baru</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form action="{{ route('create_schedule', $data->id) }}" method="POST">
                                 @csrf
@@ -47,19 +40,14 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                    <button type="button" class="btn btn-secondary btn-cancel-create" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary btn-save">Simpan</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col search-schedule">
-                <input type="search" class="form-control" placeholder="Cari jadwal">
-            </div>
-            
         </div>
 
         <div class="title-list-schedule mb-2">
@@ -87,7 +75,7 @@
                             <td>{{ $item->start->format('H:i') }}</td>
                             <td>{{ $item->end->format('H:i') }}</td>
                             <td>
-                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit-{{ $item->id }}">
+                                <button type="button" class="btn btn-warning btn-input" data-bs-toggle="modal" data-bs-target="#edit-{{ $item->id }}">
                                     <i class='bx bx-edit'></i>
                                 </button>
                                     <div class="modal fade" id="edit-{{ $item->id }}" tabindex="-1" aria-labelledby="schedule" aria-hidden="true">
@@ -95,7 +83,6 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="schedule">Edit Jadwal</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <form action="{{ route('update_schedule', $item->id) }}" method="POST">
                                                     @csrf
@@ -119,8 +106,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                        <button type="button" class="btn btn-secondary btn-cancel-create" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary btn-save">Simpan</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -146,7 +133,6 @@
 @push('script')
     <script>
         const btnDelete = document.querySelectorAll(".btn-delete");
-
         btnDelete.forEach(btnDelete => {
             btnDelete.addEventListener('click', ()=> {
                 const attId = btnDelete.getAttribute("data-id");
@@ -177,4 +163,5 @@
             })
         })
     </script>
+
 @endpush

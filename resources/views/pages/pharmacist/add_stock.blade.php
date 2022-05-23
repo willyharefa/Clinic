@@ -1,9 +1,4 @@
-@extends('layouts.pharmacist_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/pharmacist/pharmacist.css') }}">
-@endpush
-
+@extends('layouts.dashboard_pharmacist')
 @section('content')
     <section class="section-add-stock">
         <div class="row row-headline">

@@ -1,9 +1,4 @@
-@extends('layouts.main_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/admin.css') }}">
-@endpush
-
+@extends('layouts.dashboard_admin')
 @section('content')
     <section class="section-payment">
         <div class="row gx-0">
@@ -60,6 +55,11 @@
                                     <tr>
                                         <td>
                                             <button type="submit" disabled class="btn btn-primary" id="btn-payment">Bayar</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="text-decoration-none" href="{{ route('dashboard_admin') }}">Kembali ke Dashboard</a>
                                         </td>
                                     </tr>
                                 </form>

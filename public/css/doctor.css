@@ -1,8 +1,75 @@
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideNav {
+  from {
+    left: 0;
+  }
+  to {
+    left: -260px;
+  }
+}
+@keyframes hideNav {
+  from {
+    left: 0;
+  }
+  to {
+    left: -260px;
+  }
+}
+@-webkit-keyframes showNav {
+  from {
+    left: -260px;
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes showNav {
+  from {
+    left: -260px;
+  }
+  to {
+    left: 0;
+  }
+}
 @font-face {
   font-family: "Poppins";
   src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 }
 .section-dashboard-doctor .row-statistic {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
   margin-top: 30px;
   margin-bottom: 60px;
 }
@@ -32,22 +99,6 @@
   font-size: 12px;
 }
 
-.row-schedule {
-  margin: 0px 0px 60px 0px;
-  padding: 20px;
-  border-radius: 7px;
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
-  background: white;
-}
-
-.row-list-schedule {
-  margin: 0;
-  padding: 20px;
-  border-radius: 7px;
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
-  background: white;
-}
-
 .section-patient-in .row-patient-in {
   border-radius: 7px;
   padding: 20px;
@@ -58,12 +109,28 @@
   display: flex;
 }
 .section-patient-in .row-patient-in .wrapper-search input {
+  min-width: 200px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
 .section-patient-in .row-patient-in .wrapper-search button {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+.section-schedule .row-schedule {
+  margin: 0px 0px 60px 0px;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
+  background: white;
+}
+.section-schedule .row-list-schedule {
+  margin: 0;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
+  background: white;
 }
 
 .section-checkup-patient .headline-checkup-patient {
@@ -92,6 +159,9 @@
   background: white;
 }
 
+.section-list-checkups .col-filter {
+  width: 220px;
+}
 .section-list-checkups .col-filter form {
   display: flex;
   flex-direction: row;
@@ -103,6 +173,9 @@
 .section-list-checkups .col-filter form button {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+.section-list-checkups .col-search {
+  width: 210px;
 }
 
 .section-data-laboratory-checkups .row-headline-form {
@@ -207,4 +280,112 @@
   color: #808080;
   line-height: 0;
   margin-bottom: 0px;
+}
+
+.section-detail-doctor .container-detail {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.12);
+  padding: 40px;
+  border-radius: 7px;
+  max-width: 800px;
+  background: white;
+}
+.section-detail-doctor .container-detail .head-detail {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}
+.section-detail-doctor .container-detail .head-detail img.image-profile {
+  margin-right: 20px;
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section-detail-doctor .container-detail .head-detail .wrapper-name p {
+  font-size: 14px;
+}
+
+.darkmode .modal-content {
+  background-color: #3e3e3e;
+}
+.darkmode .modal-content input {
+  background: #262626;
+  border: none;
+  color: #f0f0f0;
+}
+.darkmode .modal-content .modal-header, .darkmode .modal-content .modal-footer {
+  border: none;
+}
+.darkmode .section-dashboard-doctor .row-statistic .insight {
+  background: #3e3e3e;
+}
+.darkmode .section-dashboard-doctor .row-statistic .insight .wrapper-desc-insight {
+  color: #ffffff;
+}
+.darkmode .section-patient-in .row-patient-in {
+  background: #3e3e3e;
+}
+.darkmode .section-patient-in .row-patient-in .wrapper-search input {
+  background: #a5a5a5;
+}
+.darkmode .section-patient-in .row-patient-in table thead {
+  color: #f8f8f8;
+}
+.darkmode .section-patient-in .row-patient-in table tbody {
+  color: #f0f0f0;
+}
+.darkmode .section-schedule .row-schedule {
+  background: #3e3e3e;
+}
+.darkmode .section-schedule .row-list-schedule {
+  background: #3e3e3e;
+}
+.darkmode .section-schedule .row-list-schedule table thead {
+  color: #f0f0f0;
+}
+.darkmode .section-schedule .row-list-schedule table tbody {
+  color: #a5a5a5;
+}
+.darkmode .section-list-checkups .card {
+  background-color: #3e3e3e;
+}
+.darkmode .section-list-checkups .card table thead {
+  color: #f8f8f8;
+}
+.darkmode .section-list-checkups .card table tbody {
+  color: #a5a5a5;
+}
+.darkmode .section-checkup-patient .headline-checkup-patient {
+  background-color: #3e3e3e;
+}
+.darkmode .section-checkup-patient .headline-checkup-patient .col {
+  background-color: #262626;
+}
+.darkmode .section-checkup-patient .card {
+  background-color: #3e3e3e;
+}
+.darkmode .section-checkup-patient .row-checkups {
+  background-color: #3e3e3e;
+}
+.darkmode .section-checkup-patient .row-checkups table thead {
+  color: #f8f8f8;
+}
+.darkmode .section-checkup-patient .row-checkups table tbody {
+  color: #a5a5a5;
+}
+.darkmode .section-detail-doctor .container-detail {
+  background: #3e3e3e;
+}
+.darkmode .section-detail-doctor .container-detail input {
+  background: #a5a5a5;
+}
+
+@media (max-width: 778px) {
+  .section-list-checkups .card .col-filter {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .section-list-checkups .card .col-search {
+    width: 100%;
+  }
 }

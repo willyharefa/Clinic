@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('/css/doctor/doctor.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/doctor.css') }}">
     <title>Rekam_Medis_{{ substr($checkup->no_medical_record, 3) }}</title>
     <style>
         @page {

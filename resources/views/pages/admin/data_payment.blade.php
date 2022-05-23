@@ -1,9 +1,4 @@
-@extends('layouts.main_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/admin.css') }}">
-@endpush
-
+@extends('layouts.dashboard_admin')
 @section('content')
     <section class="section-data-payment">
         <div class="row">
@@ -38,9 +33,9 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->no_payment }}</td>
                                         <td>{{ $item->name_patient }}</td>
-                                        <td>{{ $item->total_cost }}</td>
-                                        <td>{{ $item->paid }}</td>
-                                        <td>{{ $item->refund }}</td>
+                                        <td>{{ "Rp " . number_format($item->total_cost, 0, ",", ".") }}</td>
+                                        <td>{{ "Rp " . number_format($item->paid, 0, ",", ".") }}</td>
+                                        <td>{{ "Rp " . number_format($item->refund, 0, ",", ".")}}</td>
                                         <td>
                                             <a href="{{ route('download_invoice', $item->id) }}" class="btn btn-success">Download Invoice</a>
                                         </td>

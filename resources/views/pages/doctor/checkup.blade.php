@@ -1,9 +1,4 @@
-@extends('layouts.doctor_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/doctor/doctor.css') }}">
-@endpush
-
+@extends('layouts.dashboard_doctor')
 @section('content')
     <section class="section-checkup-patient">
         <div class="row gx-0 mx-0 mb-3">
@@ -35,7 +30,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6 text-sm-start text-md-end">
                             @if ($checkup == null)
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkup">
+                            <button type="button" class="btn btn-primary btn-input" data-bs-toggle="modal" data-bs-target="#checkup">
                                 Isi Pemeriksaan
                             </button>
                             @endif
@@ -71,8 +66,8 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                        <button type="button" class="btn btn-secondary btn-cancel-create" data-bs-dismiss="modal">Batal</button>
+                                        <button type="submit" class="btn btn-primary btn-save">Simpan</button>
                                         </div>
                                     </div>
                                     </div>

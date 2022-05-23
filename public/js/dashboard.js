@@ -6,37 +6,77 @@ const   btnNavCollapse = document.querySelector(".nav-collapse");
         }
         
 // Action for minimize pages
-const   btnMinimize = document.querySelector(".btn-minimize");
+let minimizeMode    = localStorage.getItem("minimizeMode");
 const   mainContent = document.getElementById("main-content");
 const   navbar      = document.querySelector(".wrapper-nav");
+
+const   enableMinimizeMode = () => {
+        localStorage.setItem("minimizeMode", "enable");
+        navbar.classList.add("active");
+        mainContent.classList.add("active");
+}
+const   disableMinimizeMode = () => {
+        localStorage.setItem("minimizeMode", null);
+        navbar.classList.remove("active");
+        mainContent.classList.remove("active");
+}
+if(minimizeMode == "enable") {
+    enableMinimizeMode();
+}
+// When btn minimize click
+const   btnMinimize = document.querySelector(".btn-minimize");
         btnMinimize.addEventListener("click", () => {
-            navbar.classList.toggle("active");
-            mainContent.classList.toggle("active");
-        })
-
-        window.addEventListener("resize", () => {
-            if(window.innerWidth > 760)
-            {
-                navbar.classList.remove("active");
-                mainContent.classList.remove("active");
-            }
-            if(window.innerWidth <= 760)
-            {
-                navbar.classList.add("active");
-                mainContent.classList.add("active");
-            }
-            if(window.innerWidth <= 500)
-            {
-                navbar.classList.remove("active");
-                mainContent.classList.remove("active");
+            minimizeMode = localStorage.getItem("minimizeMode");
+            if(minimizeMode !== "enable") {
+                enableMinimizeMode();
+            } else {
+                disableMinimizeMode();
             }
         })
-
+// In 500px when btnclose on click
 const   btnClose    = document.querySelector(".btn-close");
         btnClose.addEventListener("click", () => {
-            navbar.classList.remove("active");
-            mainContent.classList.remove("active");
+            minimizeMode = localStorage.getItem("minimizeMode");
+            disableMinimizeMode();
         })
+
+    window.addEventListener("resize", () => {
+        if(window.innerWidth > 760)
+        {
+            minimizeMode = localStorage.getItem("minimizeMode");
+            if(minimizeMode == "enable") {
+                disableMinimizeMode();
+            }
+        }
+        if(window.innerWidth <= 760)
+        {
+            minimizeMode = localStorage.getItem("minimizeMode");
+            if(minimizeMode !== "enable") {
+                enableMinimizeMode();
+            }
+        }
+        if(window.innerWidth <= 500)
+        {
+            minimizeMode = localStorage.getItem("minimizeMode");
+            if(minimizeMode == "enable") {
+                disableMinimizeMode();
+            }
+        }
+    })
+
+if(window.innerWidth <= 500 ) {
+    const link = document.querySelectorAll('li a');
+        link.forEach(link => {
+            link.addEventListener("click", () => {
+            minimizeMode = localStorage.getItem("minimizeMode");
+            if(minimizeMode == "enable") {
+                disableMinimizeMode();
+            }
+        })
+    })
+}
+
+
 // Action for Dark Mode
 let     darkMode = localStorage.getItem("darkMode");
 const   containerContent = document.querySelector(".section-content");

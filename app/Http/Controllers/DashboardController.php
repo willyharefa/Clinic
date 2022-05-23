@@ -18,7 +18,7 @@ class DashboardController extends Controller
 {
     public function dashboardAdmin(Request $request)
     {
-        $title = "Dashboard Admin";
+        $title = "Dashboard Saya";
         $countPatient = Patient::all()->count();
         $countDoctor = Doctor::all()->count();
         $countMedicine = Medicine::all()->count();
@@ -86,7 +86,7 @@ class DashboardController extends Controller
         $sumStockOut = Prescription::all()->sum('amount');
         
         $stockLess = Medicine::where('quantity', '<', 10)->get();
-        $data = Pharmacist::find(Auth::guard('pharmacist')->user()->id)->first();
+        $data = Pharmacist::find(Auth::guard('pharmacist')->user()->id);
         return view('pages.pharmacist.dashboard', compact('title', 'data', 'medicine', 'stockLess', 'countMedicine', 'sumMedicine', 'sumStockOut'));
     }
 }

@@ -1,23 +1,19 @@
-@extends('layouts.doctor_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/doctor/doctor.css') }}">
-@endpush
+@extends('layouts.dashboard_doctor')
 
 @section('content')
     <section class="section-dashboard-doctor">
         <div class="row-greetings-dashboard">
             <h4 class="fw-light">Selamat datang kembali, <strong class="fw-normal">Dokter</strong></h4>
         </div>
-        <div class="row gx-0 row-statistic">
-            <div class="col-md-3 col-sm-12 me-md-2 me-sm-0 mb-sm-3 insight">
+        <div class="row-statistic">
+            <div class="insight">
                 <i class='bx bx-user icon'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">Pasien</h3>
                     <p class="mb-0 text-muted"><strong class="statistic">{{ $countCheckup }}</strong> telah diperiksa</p>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12 me-md-2 me-sm-0 mb-sm-3 insight">
+            <div class="insight">
                 <i class='bx bx-timer bx-tada icon bg-warning text-black'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">Antrian</h3>

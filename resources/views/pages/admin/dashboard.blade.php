@@ -1,34 +1,29 @@
-@extends('layouts.main_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/admin.css') }}">
-@endpush
-
+@extends('layouts.dashboard_admin')
 @section('content')
-    <div class="container-statistic">
-        <div class="row gap-3 mx-0">
-            <div class="col col-user insight">
+    <section class="section-dashboard-admin">
+        <div class="wrapper-insight">
+            <div class="insight">
                 <i class='bx bx-user-pin icon'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">User</h3>
                     <p class="mb-0 text-muted"><strong class="statistic">{{ $countPatient }}</strong> Pengguna</p>
                 </div>
             </div>
-            <div class="col col-doctor insight">
+            <div class="insight">
                 <i class='bx bx-user-pin icon'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">Dokter</h3>
                     <p class="mb-0 text-muted"><strong class="statistic">{{ $countDoctor }}</strong> Dokter</p>
                 </div>
             </div>
-            <div class="col col-medicane insight">
+            <div class="insight">
                 <i class='bx bx-capsule icon'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">Obat</h3>
                     <p class="mb-0 text-muted"><strong class="statistic">{{ $countMedicine }}</strong> Obat terdaftar</p>
                 </div>
             </div>
-            <div class="col col-queue insight">
+            <div class="insight">
                 <i class='bx bx-timer icon'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">Antrian</h3>
@@ -36,37 +31,31 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container-patient-in">
-        <h4 class="mb-3 px-0">Antrian masuk </h4>
-        @if($message = Session::get('call'))
-            <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
-                {{ $message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-        @if($message = Session::get('success'))
-            <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
-                {{ $message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-        <div class="row gx-0 mx-0">
-            <form action="{{ route('dashboard_admin') }}" class="form-search">
-                <div class="col-md-2 col-sm-12 me-md-2 me-sm-0">
-                    <p>Berdasarkan Nama</p>
-                    <input type="text" class="form-control" placeholder="Cari Data" name="name" autocomplete="off" spellcheck="false" value="{{ request('name') }}">
+        <div class="wrapper-heading-info">
+            <h4 class="mb-3 px-0">Antrian masuk </h4>
+            @if($message = Session::get('call'))
+                <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                <div class="col-md-3 col-sm-12 me-md-2 me-sm-0">
-                    <p>Berdasarkan Tanggal</p>
+            @endif
+            @if($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>
+        <div class="wrapper-appointment">
+            <form action="{{ route('dashboard_admin') }}">
+                <div class="wrapper-search">
+                    <input type="text" class="form-control" placeholder="Cari nama" name="name" autocomplete="off" spellcheck="false" value="{{ request('name') }}">
                     <input type="date" class="form-control" name="date" value="{{ request('date') }}">
-                </div>
-                <div class="btn-submit">
-                    <button type="submit" class="btn btn-primary">Filter</button>
+                    <button type="submit" class="btn btn-secondary">Filter</button>
                 </div>
             </form>
             <div class="table-responsive">
-                <table class="table table-sm table-borderless">
+                <table class="table table-sm table-borderless text-nowrap">
                     <thead>
                         <tr class="py-2">
                             <th scope="col">#</th>
@@ -80,30 +69,29 @@
                     </thead>
                     <tbody>
                         @if (!empty($patientIn))
-                        @forelse ($patientIn as $key => $item)
-                        <tr class="align-middle">
-                            <td >{{ $key + $patientIn->firstItem() }}</td>
-                            <td>{{ $item->no_order }}</td>
-                            <td>{{ $item->patient->name }}</td>
-                            <td>{{ $item->patient->phone }}</td>
-                            <td>{{ $item->date_book->format('d F Y') }}</td>
-                            <td>{{ $item->doctor->name }}</td>
-                            <td style="display: flex">
-                                <form action="{{ route('call', $item->id) }}" id="form-call-{{ $item->id }}" method="POST">
-                                    @csrf
-                                    <button type="button" class="btn btn-primary btn-call" data-name="{{ $item->patient->name }}" data-id="{{ $item->id }}">Panggil</button>        
-                                </form>
-                                <button type="button" class="btn btn-danger ms-2 btn-cancel-request" data-no-order="{{ $item->no_order }}" data-name="{{ $item->patient->name }}" data-id="{{ $item->id }}">Cancel</button>
-                            </td>
-                                
-                        </tr>
-                        @empty
-                        <tr>
-                            <td colspan="7">
-                                <div class="alert alert-info alert-dismissible fade show my-2" role="alert">Tidak ada aktivitas dari pasien masuk.</div>
-                            </td>
-                        </tr>
-                        @endforelse
+                            @forelse ($patientIn as $key => $item)
+                            <tr class="align-middle">
+                                <td >{{ $key + $patientIn->firstItem() }}</td>
+                                <td>{{ $item->no_order }}</td>
+                                <td>{{ $item->patient->name }}</td>
+                                <td>{{ $item->patient->phone }}</td>
+                                <td>{{ $item->date_book->format('d F Y') }}</td>
+                                <td>{{ $item->doctor->name }}</td>
+                                <td style="display: flex">
+                                    <form action="{{ route('call', $item->id) }}" id="form-call-{{ $item->id }}" method="POST">
+                                        @csrf
+                                        <button type="button" class="btn btn-primary btn-call" data-name="{{ $item->patient->name }}" data-id="{{ $item->id }}">Panggil</button>        
+                                    </form>
+                                    <button type="button" class="btn btn-danger ms-2 btn-cancel-request" data-no-order="{{ $item->no_order }}" data-name="{{ $item->patient->name }}" data-id="{{ $item->id }}">Cancel</button>
+                                </td> 
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="7">
+                                    <div class="alert alert-info alert-dismissible fade show my-2" role="alert">Tidak ada aktivitas dari pasien masuk.</div>
+                                </td>
+                            </tr>
+                            @endforelse
                         @else
                         <tr>
                             <td colspan="7">
@@ -116,53 +104,51 @@
                 {{ $patientIn->links() }}
             </div>
         </div>
-    </div>
-
-    <div class="row gx-0 row-payment-list">
-        
-        <div class="headline-row">
-            <h4>Pembayaran</h4>
+        <div class="wrapper-heading-info">
+            <h4 class="mb-3">Pembayaran</h4>
+            @if($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
         </div>
-        @if($message = Session::get('success'))
-            <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
-                {{ $message }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="wrapper-unpaid">
+            <div class="table-responsive">
+                <table class="table table-sm table-borderless table-hover text-nowrap">
+                    <thead>
+                        <tr class="py-2">
+                            <th scope="col">#</th>
+                            <th scope="col">No. Antrian</th>
+                            <th scope="col">Nama Pasien</th>
+                            <th scope="col">Tanggal Diperiksa</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse ($checkup as $key => $item)
+                        <tr class="align-middle">
+                            <td >{{ $key + $checkup->firstItem() }}</td>
+                            <td>{{ $item->appointmen->no_order }}</td>
+                            <td>{{ $item->patient->name }}</td>
+                            <td>{{ $item->date_checkup->format('d F Y') }}</td>
+                            <td>
+                                <a href="{{ route('payment', $item->id) }}" type="button" class="btn btn-success py-2 px-3">Input Pembayaran</a>
+                            </td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td colspan="5">
+                                <div class="alert alert-info alert-dismissible fade show mb-0" role="alert">Tidak ada aktivitas pembayaran.</div>
+                            </td>
+                        </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+                {{ $checkup->links()}}
             </div>
-        @endif
-        <div class="table-responsive bg-white">
-            <table class="table table-sm table-borderless table-hover table-hover">
-                <thead>
-                    <tr class="py-2 text-muted">
-                        <th scope="col">#</th>
-                        <th scope="col">No. Antrian</th>
-                        <th scope="col">Nama Pasien</th>
-                        <th scope="col">Tanggal Diperiksa</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($checkup as $key => $item)
-                    <tr class="align-middle">
-                        <td >{{ $key + $checkup->firstItem() }}</td>
-                        <td>{{ $item->appointmen->no_order }}</td>
-                        <td>{{ $item->patient->name }}</td>
-                        <td>{{ $item->date_checkup->format('d F Y') }}</td>
-                        <td>
-                            <a href="{{ route('payment', $item->id) }}" type="button" class="btn btn-success py-2 px-3">Input Pembayaran</a>
-                        </td>
-                    </tr>
-                    @empty
-                    <tr>
-                        <td colspan="5">
-                            <div class="alert alert-info alert-dismissible fade show mb-0" role="alert">Tidak ada aktivitas pembayaran.</div>
-                        </td>
-                    </tr>
-                    @endforelse
-                </tbody>
-            </table>
-            {{ $checkup->links()}}
         </div>
-    </div>
+    </section>
 
 @endsection
 

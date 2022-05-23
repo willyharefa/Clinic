@@ -1,149 +1,154 @@
-@extends('layouts.main_dashboard')
+@extends('layouts.dashboard_admin')
 
 @section('content')
-    <h3 class="mb-3">Riwayat Hapus</h3>
+    <section class="section-history-delete">
+        <div class="wrapper-heading-info">
+            <h3 class="mb-3">Riwayat Hapus</h3>
 
-    @if($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
-            {{ $message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            @if($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
+                    {{ $message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
         </div>
-    @endif
-
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pasien-tab" data-bs-toggle="tab" data-bs-target="#pasien" type="button" role="tab" aria-controls="pasien" aria-selected="true">Pasien</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="doctor-tab" data-bs-toggle="tab" data-bs-target="#doctor" type="button" role="tab" aria-controls="doctor" aria-selected="false">Dokter</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="petugas-tab" data-bs-toggle="tab" data-bs-target="#petugas" type="button" role="tab" aria-controls="petugas" aria-selected="false">Petugas</button>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        {{-- Trash Patient Tab --}}
-        <div class="tab-pane fade show active" id="pasien" role="tabpanel" aria-labelledby="pasien-tab">
-            <div class="row-list-user">
-                <div class="table-responsive p-3">
-                    <table class="table table-borderless">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama</th>
-                                <th>Tanggal dihapus</th>
-                                <th class="text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($trashPatient as $item)
-                            <tr class="align-middle">
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->deleted_at->format('d F Y') }}</td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-success btn-restore" data-id="{{ $item->id }}" data-name="{{ $item->name }}">
-                                        <i class='bx bx-share'></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-delete" data-id="{{ $item->id }}" data-name="{{ $item->name }}"><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="4">
-                                    <div class="alert alert-info alert-dismissible fade show my-2" role="alert">
-                                        Riwayat hapus data pasien kosong.
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                    {{ $trashPatient->links() }}
+        <div class="wrapper-trash">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pasien-tab" data-bs-toggle="tab" data-bs-target="#pasien" type="button" role="tab" aria-controls="pasien" aria-selected="true">Pasien</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="doctor-tab" data-bs-toggle="tab" data-bs-target="#doctor" type="button" role="tab" aria-controls="doctor" aria-selected="false">Dokter</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="petugas-tab" data-bs-toggle="tab" data-bs-target="#petugas" type="button" role="tab" aria-controls="petugas" aria-selected="false">Petugas</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                {{-- Trash Patient Tab --}}
+                <div class="tab-pane fade show active" id="pasien" role="tabpanel" aria-labelledby="pasien-tab">
+                    <div class="row-list-user">
+                        <div class="table-responsive p-3">
+                            <table class="table table-borderless text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama</th>
+                                        <th>Tanggal dihapus</th>
+                                        <th class="text-center">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($trashPatient as $item)
+                                    <tr class="align-middle">
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->deleted_at->format('d F Y') }}</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-success btn-restore" data-id="{{ $item->id }}" data-name="{{ $item->name }}">
+                                                <i class='bx bx-share'></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-delete" data-id="{{ $item->id }}" data-name="{{ $item->name }}"><i class='bx bx-trash'></i></button>
+                                        </td>
+                                    </tr>
+                                    @empty
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-info alert-dismissible fade show my-2" role="alert">
+                                                Riwayat hapus data pasien masih kosong.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                            {{ $trashPatient->links() }}
+                        </div>
+                    </div>
+                </div>
+                {{-- Doctor Tab --}}
+                <div class="tab-pane fade" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
+                    <div class="row-list-user">
+                        <div class="table-responsive p-3">
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama</th>
+                                        <th>Tanggal dihapus</th>
+                                        <th class="text-center">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($trashDoctor as $item)
+                                    <tr class="align-middle">
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->deleted_at->format('d F Y') }}</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-success">
+                                                <i class='bx bx-share'></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-delete" data-id="" data-name=""><i class='bx bx-trash'></i></button>
+                                        </td>
+                                    </tr>
+                                    @empty
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-info alert-dismissible fade show my-2" role="alert">
+                                                Riwayat hapus data dokter masih kosong.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {{-- Pharmacist Tab --}}
+                <div class="tab-pane fade" id="petugas" role="tabpanel" aria-labelledby="petugas-tab">
+                    <div class="row-list-user">
+                        <div class="table-responsive p-3">
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nama</th>
+                                        <th>Tanggal dihapus</th>
+                                        <th class="text-center">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse ($trashPharmacist as $item)
+                                    <tr class="align-middle">
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->name }}</td>
+                                        <td>{{ $item->deleted_at->format('d F Y') }}</td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-success">
+                                                <i class='bx bx-share'></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-delete" data-id="" data-name=""><i class='bx bx-trash'></i></button>
+                                        </td>
+                                    </tr>
+                                    @empty
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-info alert-dismissible fade show my-2" role="alert">
+                                                Riwayat hapus data apoteker masih kosong.
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        {{-- Doctor Tab --}}
-        <div class="tab-pane fade" id="doctor" role="tabpanel" aria-labelledby="doctor-tab">
-            <div class="row-list-user">
-                <div class="table-responsive p-3">
-                    <table class="table table-borderless">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama</th>
-                                <th>Tanggal dihapus</th>
-                                <th class="text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($trashDoctor as $item)
-                            <tr class="align-middle">
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->deleted_at->format('d F Y') }}</td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-success">
-                                        <i class='bx bx-share'></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-delete" data-id="" data-name=""><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="4">
-                                    <div class="alert alert-info alert-dismissible fade show my-2" role="alert">
-                                        Riwayat hapus data dokter kosong.
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        {{-- Pharmacist Tab --}}
-        <div class="tab-pane fade" id="petugas" role="tabpanel" aria-labelledby="petugas-tab">
-            <div class="row-list-user">
-                <div class="table-responsive p-3">
-                    <table class="table table-borderless">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama</th>
-                                <th>Tanggal dihapus</th>
-                                <th class="text-center">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($trashPharmacist as $item)
-                            <tr class="align-middle">
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->deleted_at->format('d F Y') }}</td>
-                                <td class="text-center">
-                                    <button type="button" class="btn btn-success">
-                                        <i class='bx bx-share'></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-delete" data-id="" data-name=""><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            @empty
-                            <tr>
-                                <td colspan="4">
-                                    <div class="alert alert-info alert-dismissible fade show my-2" role="alert">
-                                        Riwayat hapus data apoteker kosong.
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 @endsection
 
 @push('script')
@@ -156,7 +161,7 @@
                 const attId = btnRestore.getAttribute("data-id");
                 swal({
                     title: "Data akan dikembalikan ?",
-                    text: "User "+ attName + " akan dihapus pada database",
+                    text: "User "+ attName + " akan dikembalikan pada database",
                     icon: "info",
                     html: true,
                     buttons: true,

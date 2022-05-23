@@ -18,15 +18,15 @@ class AdminController extends Controller
 {
     public function addUser(Request $request)
     {
-        $title = "Data User";
+        $title = "Data Pengguna";
         if(!empty($request->input('search_by'))) {
             $patient = Patient::where('name', 'LIKE', '%'.$request->input('search_by').'%')
-                        ->paginate(10);
+                        ->paginate(10, ["*"], 'patient');
         } else {
-            $patient = Patient::paginate(10);
+            $patient = Patient::paginate(10, ["*"], 'patient');
         }
-        $doctor = Doctor::paginate(10);
-        $pharmacist = Pharmacist::paginate(10);
+        $doctor = Doctor::paginate(10, ["*"], 'doctor');
+        $pharmacist = Pharmacist::paginate(10, ["*"], 'pharmacist');
         return view('pages.admin.add_user', compact('title', 'patient', 'doctor', 'pharmacist'));
     }
 

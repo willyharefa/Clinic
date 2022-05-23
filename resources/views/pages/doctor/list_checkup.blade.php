@@ -1,9 +1,4 @@
-@extends('layouts.doctor_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/doctor/doctor.css') }}">
-@endpush
-
+@extends('layouts.dashboard_doctor')
 @section('content')
 <section class="section-list-checkups">
     <div class="row">
@@ -12,14 +7,14 @@
                 <h5 class="card-header">Riwayat Pemeriksaan</h5>
                 <div class="card-body">
                     <div class="row gx-0 row-headline-filter justify-content-between mb-5 align-items-end">
-                        <div class="col-sm-12 col-md-4 col-filter mb-sm-3 mb-md-0">
+                        <div class="col-filter">
                             <label class="form-text fst-italic mb-2">Filter berdasarkan tanggal</label>
                             <form action="{{ route('checkup_history') }}">
                                 <input type="date" class="form-control" name="filter_with_date" placeholder="Cari data" value="{{ request('filter_with_date') }}">
                                 <button type="submit" class="btn btn-primary">Filter</button>
                             </form>
                         </div>
-                        <div class="col-sm-12 col-md-2">
+                        <div class="col-search">
                             <form action="{{ route('checkup_history') }}">
                                 <input type="search" class="form-control" name="search_data" placeholder="Cari data" value="{{ request('search_data') }}" spellcheck="false" autocomplete="off">
                             </form>

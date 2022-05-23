@@ -154,14 +154,19 @@ class DoctorController extends Controller
             // dd($patientName);
             if(!empty($patientName)) {
                 $checkup = Checkup::where('patient_id',$patientName->id)
+                            ->where('doctor_id', $data->id)
                             ->orWhere('no_medical_record', 'LIKE', '%'.$request->search_data.'%')
                             ->paginate(7);
             } else {
-                $checkup = Checkup::where('no_medical_record', 'LIKE', '%'.$request->search_data.'%')->paginate(7);
+                $checkup = Checkup::where('no_medical_record', 'LIKE', '%'.$request->search_data.'%')
+                                    ->where('doctor_id', $data->id)
+                                    ->paginate(7);
             }
         }
         elseif(!empty($request->input('filter_with_date'))) {
-            $checkup = Checkup::whereDate('date_checkup', 'LIKE', $request->filter_with_date)->paginate(7);
+            $checkup = Checkup::whereDate('date_checkup', 'LIKE', $request->filter_with_date)
+                                ->where('doctor_id', $data->id)
+                                ->paginate(7);
         }
         else {
             $checkup = Checkup::where('doctor_id', Auth::guard('doctor')->user()->id)->paginate(7);
@@ -193,5 +198,11 @@ class DoctorController extends Controller
         Medicine::where('id', $prescription->medicine_id)->increment('quantity', $prescription->amount);
         $prescription->delete();
         return redirect()->back()->with("success", "Oke, obat berhasil di tarik.");
+    }
+    public function profileDoctor()
+    {
+        $title = "Profile Saya";
+        $data = Doctor::find(Auth::guard('doctor')->user()->id);
+        return view('pages.doctor.profile_doctor', compact('title', 'data'));
     }
 }

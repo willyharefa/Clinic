@@ -2,6 +2,9 @@
     .row-statistic {
         margin-top: 30px;
         margin-bottom: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
         .insight {
             border-radius: 7px;
             padding: 15px;

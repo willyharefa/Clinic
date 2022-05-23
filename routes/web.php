@@ -29,7 +29,7 @@ Route::post('/authenticate/user', [LoginController::class, 'authenticate'])->nam
 
 Route::middleware('auth:web')->group(function () {
     Route::get('/dashboard/admin', [DashboardController::class, 'dashboardAdmin'])->name('dashboard_admin');
-    Route::get('/dashboard/admin/list/patient', [AdminController::class, 'addUser'])->name('list_patient');
+    Route::get('/dashboard/admin/list/patient', [AdminController::class, 'addUser'])->name('list_user');
     Route::post('/dashboard/admin/insert/patient', [AdminController::class, 'insertPatient'])->name('insert_patient');
     Route::get('/dashboard/admin/payment/list', [AdminController::class, 'paymentList'])->name('payment_list');
     Route::post('/dashboard/admin/update/patient/{id}', [AdminController::class, 'updatePatient'])->name('update_patient');
@@ -64,6 +64,7 @@ Route::middleware('auth:doctor')->group(function () {
     Route::get('/dashboard/download/file/{id}', [DoctorController::class, 'download'])->name('download_file_checkups'); 
     Route::get('/download/file/recipe/{id}', [DoctorController::class, 'downloadRecipe'])->name('download_recipe_doctor');
     Route::get('/dashboard/doctor/recipe/pullback/{id}', [DoctorController::class, 'pullback']);
+    Route::get('/dashboard/profile/doctor', [DoctorController::class, 'profileDoctor'])->name('profile_doctor');
 });
 
 Route::middleware('auth:pharmacist')->group(function () {

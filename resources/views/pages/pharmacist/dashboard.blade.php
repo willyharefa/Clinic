@@ -1,9 +1,4 @@
-@extends('layouts.pharmacist_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/pharmacist/pharmacist.css') }}">
-@endpush
-
+@extends('layouts.dashboard_pharmacist')
 @section('content')
     <section class="section-dashboard">
         <div class="row gx-0 heading-greetings">
@@ -11,21 +6,21 @@
         </div>
 
         <div class="row gx-0 row-statistic justify-content-between">
-            <div class="col me-md-2 me-sm-0 mb-sm-3 insight">
+            <div class="insight">
                 <i class='bx bx-capsule icon'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">Obat</h3>
                     <p class="mb-0 text-muted"><strong class="statistic">{{ $countMedicine }}</strong> Obat terdaftar</p>
                 </div>
             </div>
-            <div class="col me-md-2 me-sm-0 mb-sm-3 insight">
+            <div class="insight">
                 <i class='bx bx-layer icon'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">Stok</h3>
                     <p class="mb-0 text-muted"><strong class="statistic">{{ $sumMedicine }}</strong> Stok obat</p>
                 </div>
             </div>
-            <div class="col me-md-2 me-sm-0 mb-sm-3 insight">
+            <div class="insight">
                 <i class='bx bx-cloud-upload icon'></i>
                 <div class="wrapper-desc-insight ms-3">
                     <h3 class="mb-0">Obat Keluar</h3>

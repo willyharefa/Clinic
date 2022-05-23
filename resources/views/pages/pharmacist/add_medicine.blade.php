@@ -1,9 +1,4 @@
-@extends('layouts.pharmacist_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/pharmacist/pharmacist.css') }}">
-@endpush
-
+@extends('layouts.dashboard_pharmacist')
 @section('content')
     <section class="section-add-medicine">
         <div class="row gx-0 mb-2">
@@ -95,7 +90,7 @@
                         </form>
                     </div>
                 </div>
-                <table class="table table-borderless align-middle">
+                <table class="table table-borderless align-middle text-nowrap">
                     <thead>
                         <tr>
                             <th>#</th>

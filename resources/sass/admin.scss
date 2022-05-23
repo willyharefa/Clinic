@@ -1,28 +1,231 @@
-.row-payment-list {
-    margin-top: 30px;
-    .headline-row {
-        margin-bottom: 10px;
+@import 'presets.scss';
+
+.section-dashboard-admin {
+    .wrapper-insight {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 10px;
+        margin-bottom: 50px;
+        .insight {
+            background: $white-1;
+            padding: 0px 20px;
+            display: flex;
+            align-items: center;
+            border-radius: 6px;
+            min-height: 100px;
+            box-shadow: 0px 1px 4px rgba(0,0,0, .12);
+            .icon {
+                color: $blue-1;
+                font-size: 30px;
+                border-radius: 6px;
+                display: grid;
+                place-content: center;
+                min-height: 60px;
+                min-width: 60px;
+                border: 1px solid #1d71de72;
+            }
+            h3{
+                font-size: 22px;
+                font-weight: 300;
+            }
+            p {
+                font-size: 12px;
+            }
+        }
     }
-    .table-responsive {
+    .wrapper-appointment {
+        background: $white-1;
+        box-shadow: 0px 0px 4px rgba(0,0,0,.12);
         padding: 20px;
         border-radius: 7px;
-        box-shadow: 0px 1px 4px rgba(0,0,0, .08);
+        margin-bottom: 50px;
+        .wrapper-search {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        .table-responsive {
+            table {
+                thead {
+                    th {
+                        color: $white-4;
+                    }
+                    th:nth-child(1) {
+                        padding-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .wrapper-unpaid {
+        background-color: $white-1;
+        padding: 20px;
+        border-radius: 7px;
+        box-shadow: 0px 0px 4px rgba(0,0,0, .12);
+        .table-responsive {
+            table {
+                thead {
+                    color: $white-4;
+                }
+            }
+        }
     }
 }
-
+.section-data-user {
+    .wrapper-list-user {
+        .tab-content {
+            background-color: $white-1;
+            border-radius: 0 7px 7px 7px;
+        }
+        table {
+            thead tr {
+                color: $white-4;
+            }
+        }
+    }
+}
+.section-history-delete {
+    .wrapper-trash {
+        .nav-tabs {
+            border-bottom: none;
+            .nav-link {
+                border: none;
+            }
+        }
+        .tab-content {
+            background-color: $white-1;
+            border-radius: 0 7px 7px 7px;
+        }
+    }
+}
 .section-payment {
     .wrapper-info-payment {
         .content-payment-list {
-            background: white;
+            background: $white-1;
             padding: 20px;
             border-radius: 7px;
             box-shadow: 0px 1px 4px rgba(0,0,0,.08);
         }
     }
 }
-
-.section-data-payment {
-    .row-headline-filter {
-        margin-bottom: 20px;
+// Dark Mode 
+.darkmode {
+    .section-dashboard-admin {
+        .wrapper-insight {
+            .insight {
+                background-color: $dark-3;
+                .icon {
+                    color: $white-3;
+                    border: none;
+                    background: $dark-4;
+                }
+            }
+        }
+        .wrapper-appointment {
+            background-color: $dark-3;
+            input {
+                background-color: $dark-4;
+                border: none;
+                color: $white-3;
+            }
+            table {
+                thead th{
+                    color: $white-3;
+                }
+                tbody {
+                    color: $white-4;
+                }
+            }
+        }
+        .wrapper-unpaid {
+            background-color: $dark-3;
+            table {
+                thead th{
+                    color: $white-3;
+                }
+                tbody {
+                    color: $white-4;
+                    tr:hover {
+                        background-color: rgba($white-3, .3);
+                    }
+                }
+            }
+        }
+    }
+    .section-data-user {
+        .wrapper-list-user {
+            .nav-tabs {
+                border-bottom: none;
+                .nav-link {
+                    margin-bottom: -2px;
+                    &:hover {
+                        background-color: $white-4;
+                        color: $dark-2;
+                        border: 1px solid $white-4;
+                    }
+                    &.active {
+                        background-color: $dark-3 !important;
+                        color: white !important;
+                        border: none;
+                    }
+                }
+                
+            }
+            .tab-content {
+                background-color: $dark-3;
+                table {
+                    thead tr {
+                        color: $white-3;
+                    }
+                    tbody {
+                        color: $white-4;
+                    }
+                }
+            }
+        }
+    }
+    .section-payment {
+        .content-payment-list {
+            background-color: $dark-3;
+            table {
+                color: $white-3;
+            }
+        }
+    }
+    .section-history-delete {
+        .nav-tabs {
+            .active {
+                background-color: $dark-3;
+                color: $white-3;
+            }
+        }
+        .tab-content {
+            background-color: $dark-3;
+            table {
+                thead {
+                    color: $white-3;
+                }
+                tbody {
+                    color: $white-4;
+                }
+            }
+        }
+    }
+    .section-data-payment {
+        .card {
+            background-color: $dark-3;
+            .row-headline-filter {
+                margin-bottom: 20px;
+            }
+            table {
+                thead {
+                    color: $white-3;
+                }
+                tbody {
+                    color: $white-4;
+                }
+            }
+        }
     }
 }

@@ -1,9 +1,4 @@
-@extends('layouts.pharmacist_dashboard')
-
-@push('style')
-    <link rel="stylesheet" href="{{ asset('/css/pharmacist/pharmacist.css') }}">
-@endpush
-
+@extends('layouts.dashboard_pharmacist')
 @section('content')
     <section class="section-report">
         <div class="row gx-0 row-headline-report">
@@ -57,7 +52,7 @@
         </div>
         <div class="row gx-0 row-data-list">
             <div class="table-responsive">
-                <table class="table table-borderless">
+                <table class="table table-borderless text-nowrap">
                     <thead>
                         <tr>
                             <th>#</th>
