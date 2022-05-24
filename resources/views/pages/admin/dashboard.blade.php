@@ -70,6 +70,7 @@
                     <tbody>
                         @if (!empty($patientIn))
                             @forelse ($patientIn as $key => $item)
+                            @if ($item->patient !== null && $item->doctor !== null)
                             <tr class="align-middle">
                                 <td >{{ $key + $patientIn->firstItem() }}</td>
                                 <td>{{ $item->no_order }}</td>
@@ -85,6 +86,7 @@
                                     <button type="button" class="btn btn-danger ms-2 btn-cancel-request" data-no-order="{{ $item->no_order }}" data-name="{{ $item->patient->name }}" data-id="{{ $item->id }}">Cancel</button>
                                 </td> 
                             </tr>
+                            @endif
                             @empty
                             <tr>
                                 <td colspan="7">
@@ -127,6 +129,7 @@
                     </thead>
                     <tbody>
                         @forelse ($checkup as $key => $item)
+                        @if (($item->patient != null) AND ($item->doctor != null))
                         <tr class="align-middle">
                             <td >{{ $key + $checkup->firstItem() }}</td>
                             <td>{{ $item->appointmen->no_order }}</td>
@@ -136,6 +139,7 @@
                                 <a href="{{ route('payment', $item->id) }}" type="button" class="btn btn-success py-2 px-3">Input Pembayaran</a>
                             </td>
                         </tr>
+                        @endif
                         @empty
                         <tr>
                             <td colspan="5">

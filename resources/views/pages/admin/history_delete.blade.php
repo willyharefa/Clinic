@@ -86,7 +86,7 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->deleted_at->format('d F Y') }}</td>
                                         <td class="text-center">
-                                            <button type="button" class="btn btn-success">
+                                            <button type="button" class="btn btn-success btn-restore-doctor" data-id="{{ $item->id }}" data-name="{{ $item->name }}">
                                                 <i class='bx bx-share'></i>
                                             </button>
                                             <button type="button" class="btn btn-danger btn-delete" data-id="" data-name=""><i class='bx bx-trash'></i></button>
@@ -126,7 +126,7 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->deleted_at->format('d F Y') }}</td>
                                         <td class="text-center">
-                                            <button type="button" class="btn btn-success">
+                                            <button type="button" class="btn btn-success btn-restore" data-id="{{ $item->id }}" data-name="{{ $item->name }}">
                                                 <i class='bx bx-share'></i>
                                             </button>
                                             <button type="button" class="btn btn-danger btn-delete" data-id="" data-name=""><i class='bx bx-trash'></i></button>
@@ -174,6 +174,38 @@
                         });
                         setTimeout(()=> {
                             location.href = "/dashboard/admin/trash/restore/"+attId+"";
+                        },1200);
+
+                    } else {
+                        swal("User "+ attName +" batal dikembalikan", {
+                            icon: "info",
+                        });
+
+                    }
+                });
+            })
+        })
+
+        const btnRestoreDoctor = document.querySelectorAll(".btn-restore-doctor");
+        btnRestoreDoctor.forEach(btnRestoreDoctor => {
+            btnRestoreDoctor.addEventListener("click", () => {
+                const attName = btnRestoreDoctor.getAttribute("data-name");
+                const attId = btnRestoreDoctor.getAttribute("data-id");
+                swal({
+                    title: "Data akan dikembalikan ?",
+                    text: "Doctor "+ attName + " akan dikembalikan pada database",
+                    icon: "info",
+                    html: true,
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willRestore) => {
+                    if (willRestore) {
+                        swal("Selamat! user "+ attName +" berhasil dikembalikan", {
+                            icon: "success",
+                        });
+                        setTimeout(()=> {
+                            location.href = "/dashboard/admin/trash/restore/doctor/"+attId+"";
                         },1200);
 
                     } else {

@@ -20,6 +20,7 @@
                     </thead>
                     <tbody>
                         @forelse ($medicalHistory as $key => $item)
+                        @if ($item->doctor !== null)
                         <tr>
                             <th>{{ $key + $medicalHistory->firstItem() }}</th>
                             <td>{{ $item->appointmen->no_order }}</td>
@@ -30,6 +31,7 @@
                                 <a href="{{ route('history_prescription', $item->id) }}" class="btn btn-success">Lihat Resep</a>
                             </td>
                         </tr>
+                        @endif
                         @empty
                         <tr>
                             <td colspan="7">

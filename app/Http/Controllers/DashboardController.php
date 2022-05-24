@@ -33,9 +33,14 @@ class DashboardController extends Controller
         } elseif(!empty($request->input('name')) && empty($request->input('date'))) {
             // return 'ada name';
             $namePatient = Patient::where('name', 'LIKE', '%'.$request->input('name').'%')->first();
-            $patientIn = Appointmen::where('status', 'Antrian')
+            if(!empty($namePatient)) {
+                $patientIn = Appointmen::where('status', 'Antrian')
                                 ->where('patient_id', 'LIKE', $namePatient->id)
                                 ->paginate(7);
+            } else {
+                $patientIn = Appointmen::where('status', 'Antrian')
+                        ->paginate(7);
+            }
         }
         elseif(!empty($request->input('date')) && empty($request->input('name'))) {
             // return 'ada date';
@@ -44,9 +49,11 @@ class DashboardController extends Controller
                                 ->paginate(7);
         } 
         else {
-            $patientIn = Appointmen::where('status', 'Antrian')->paginate(7);  
+            $patientIn = Appointmen::where('status', 'Antrian')
+                        ->paginate(7);
         }
         $checkup = Checkup::where('paid', 0)->oldest()->paginate(7, ["*"], 'payment');
+        // dd($patientIn);
         return view('pages.admin.dashboard', compact('title', 'countPatient', 'countDoctor', 'countMedicine', 'countBook', 'checkup', 'patientIn'));
     }
 

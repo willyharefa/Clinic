@@ -45,6 +45,7 @@ Route::middleware('auth:web')->group(function () {
     Route::get('/dashboard/admin/trash', [AdminController::class, 'trash'])->name('trash');
     Route::get('/dashboard/admin/cancel/book/{id}', [AdminController::class, 'cancelBook']);
     Route::get('/dashboard/admin/trash/restore/{id}', [AdminController::class, 'trashRestore']);
+    Route::get('/dashboard/admin/trash/restore/doctor/{id}', [AdminController::class, 'restoreDoctor']);
     Route::get('/dashboard/admin/force/delete/{id}', [AdminController::class, 'deletePermanent']);
 });
 

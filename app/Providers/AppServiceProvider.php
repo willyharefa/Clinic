@@ -26,5 +26,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+
+        // $isSharedHosting = (bool) env('SHARED_HOSTING');
+        // if($isSharedHosting) {
+        //     $this->app->bind('path.public', function() {
+        //         return realpath(base_path().'/../public_html');
+        //     });
+        // }
     }
 }

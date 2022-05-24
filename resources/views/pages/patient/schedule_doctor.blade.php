@@ -37,6 +37,7 @@
                     </thead>
                     <tbody>
                         @forelse ($schedule as $key => $item)
+                        @if ($item->doctor !== null)
                         <tr>
                             <td>{{ $key + $schedule->firstItem() }}</td>
                             <td>{{ $item->doctor->name }}</td>
@@ -51,6 +52,7 @@
                                 </form>
                             </td>
                         </tr>
+                        @endif
                         @empty
                         <tr>
                             <td colspan="4">

@@ -16,6 +16,8 @@ class Doctor extends Authenticatable
     protected $guard = 'doctor';
     protected $guarded = ['id'];
 
+    protected $dates = ['deleted_at'];
+
     protected $hidden = [
         'password',
         'remember_token',

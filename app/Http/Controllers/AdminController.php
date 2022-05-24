@@ -11,7 +11,7 @@ use App\Models\Appointmen;
 use App\Models\Pharmacist;
 use App\Models\Prescription;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
@@ -319,6 +319,12 @@ class AdminController extends Controller
     {
         $user = Patient::onlyTrashed()->where('id',$id)->first();
         $user->restore();
+        return redirect()->back()->with("success", "Selamat, data berhasil dikembalikan.");
+    }
+
+    public function restoreDoctor($id) {
+        $doctor = Doctor::onlyTrashed()->where('id',$id)->first();
+        $doctor->restore();
         return redirect()->back()->with("success", "Selamat, data berhasil dikembalikan.");
     }
     public function deletePermanent($id)

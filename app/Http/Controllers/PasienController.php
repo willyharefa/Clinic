@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\Patient;
 use App\Models\Schedule;
-use Barryvdh\DomPDF\Facade\PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 use App\Models\Appointmen;
 use App\Models\Checkup;
 use App\Models\Prescription;

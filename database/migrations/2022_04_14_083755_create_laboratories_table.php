@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('grade');
             $table->timestamps();
 
-            $table->foreign('checkup_id')->references('id')->on('checkups');
+            $table->foreign('checkup_id')->references('id')->on('checkups')->onDelete('cascade');
         });
     }
 

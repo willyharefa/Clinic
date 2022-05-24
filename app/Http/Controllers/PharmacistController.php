@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StockIn;
 use App\Models\Medicine;
-use Barryvdh\DomPDF\Facade\PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 use App\Models\Pharmacist;
 use App\Models\Prescription;
 use Carbon\Carbon;

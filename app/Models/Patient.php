@@ -16,6 +16,8 @@ class Patient extends Authenticatable
     protected $guard = 'patient';
     protected $guarded = ['id'];
 
+    protected $dates = ['deleted_at'];
+
     protected $hidden = [
         'password',
         'remember_token',
